@@ -22,9 +22,9 @@ struct ViewFinder : View {
                 content.camera = .spatialTracking
                 content.renderingEffects.depthOfField = .disabled
                 content.renderingEffects.motionBlur = .disabled
-                Car0 = AnchorEntity(.image(group: "AR Resources", name: "blackcard"))
-                Car1 = AnchorEntity(.image(group: "AR Resources", name: "goldv2"))
-                Car3 = AnchorEntity(.image(group: "AR Resources", name: "goldcard"))
+                Car0 = AnchorEntity(.image(group: "AR Resources", name: "astonimage"))
+                Car1 = AnchorEntity(.image(group: "AR Resources", name: "lotusimage"))
+                Car3 = AnchorEntity(.image(group: "AR Resources", name: "mclarenimage"))
                 if let car0 = try? await ModelEntity(named: "shrunk2uprotatedmore.usdz") {
                     content.add(car0)
                     Car0.addChild(car0)

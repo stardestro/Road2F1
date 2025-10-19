@@ -6,7 +6,7 @@
 //
 import Foundation
 
-struct Profile: Decodable {
+struct Profile: Decodable, Encodable {
   let username: String?
   let fullName: String?
   let website: String?
@@ -27,12 +27,12 @@ struct UpdateProfileParams: Encodable {
   }
 }
 
-struct User: Decodable {
+struct User: Decodable, Encodable {
     let id: UUID
     let email: String
     let username: String
     let display_name: String
-    let unlocked_cars: [UUID]
+    var unlocked_cars: [UUID]
     let fastest_lap: Int?
     let total_races: Int
     let created_at: Date

@@ -13,10 +13,12 @@
 		978063602EA4976700EDA191 /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = 9780635F2EA4976700EDA191 /* Realtime */; };
 		978063622EA4976700EDA191 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 978063612EA4976700EDA191 /* Storage */; };
 		978063642EA4976700EDA191 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 978063632EA4976700EDA191 /* Supabase */; };
+		97E2A3FA2EA5001000BE72CC /* supa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2A3F92EA5000D00BE72CC /* supa.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		979436C02EA442D100BE3EF8 /* Road2F1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Road2F1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		97E2A3F92EA5000D00BE72CC /* supa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = supa.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -62,6 +64,7 @@
 			children = (
 				979436C22EA442D100BE3EF8 /* Road2F1 */,
 				979436C12EA442D100BE3EF8 /* Products */,
+				97E2A3F92EA5000D00BE72CC /* supa.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97E2A3FA2EA5001000BE72CC /* supa.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

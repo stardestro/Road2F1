@@ -13,6 +13,7 @@ struct Road2F1App: App {
         WindowGroup {
 //            ContentView()
             NavigatorView()
+//            SupabaseNavView()
         }
     }
 }

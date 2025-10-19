@@ -27,6 +27,10 @@ struct NavigatorView: View {
                 .tabItem {
                     Label("login", systemImage: "gearshape.fill")
                 }
+            SupabaseView()
+                .tabItem {
+                    Label("Supabase", systemImage: "gearshape.fill")
+                }
             
 //            NavigationLink(destination: ProfileView()) {
 //                Text("Profile")

@@ -1,0 +1,17 @@
+{
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "resources" : [
+    {
+      "filename" : "apriltag.arreferenceimage"
+    },
+    {
+      "filename" : "tag.arreferenceimage"
+    },
+    {
+      "filename" : "tag0.arreferenceimage"
+    }
+  ]
+}

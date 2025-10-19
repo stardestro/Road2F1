@@ -23,26 +23,26 @@ struct NavigatorView: View {
                 .tabItem {
                     Label("Profile", systemImage: "person.fill")
                 }
-            ContentView()
-                .tabItem {
-                    Label("login", systemImage: "gearshape.fill")
-                }
-            SupabaseView()
-                .tabItem {
-                    Label("Supabase", systemImage: "gearshape.fill")
-                }
-            AuthView()
-                .tabItem {
-                    Label("Auth", systemImage: "gearshape.fill")
-                }
+//            ContentView()
+//                .tabItem {
+//                    Label("login", systemImage: "gearshape.fill")
+//                }
+//            SupabaseView()
+//                .tabItem {
+//                    Label("Supabase", systemImage: "gearshape.fill")
+//                }
+//            AuthView()
+//                .tabItem {
+//                    Label("Auth", systemImage: "gearshape.fill")
+//                }
             SupabaseNavView()
                 .tabItem {
-                    Label("Supabasenav", systemImage: "gearshape.fill")
+                    Label("login", systemImage: "key.fill")
                 }
-            SupabaseProfileView()
-                .tabItem {
-                    Label("Supabaseprofile", systemImage: "gearshape.fill")
-                }
+//            SupabaseProfileView()
+//                .tabItem {
+//                    Label("Supabaseprofile", systemImage: "gearshape.fill")
+//                }
             
 //            NavigationLink(destination: ProfileView()) {
 //                Text("Profile")

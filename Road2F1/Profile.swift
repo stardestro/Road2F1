@@ -46,9 +46,9 @@ struct ProfileView: View {
               Text("\(profile.created_at)")
               Text("\(profile.updated_at)")
 //              .textContentType(.name)
-            TextField("Website", text: $website)
-              .textContentType(.URL)
-              .textInputAutocapitalization(.never)
+//            TextField("Website", text: $website)
+//              .textContentType(.URL)
+//              .textInputAutocapitalization(.never)
           }
             
             if isLoading {

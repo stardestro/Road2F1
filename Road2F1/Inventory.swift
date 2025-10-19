@@ -28,18 +28,104 @@ struct SheetView: View {
                 
                 print("Found code: \(result.string)")
                 if (result.string.contains("00000000-0000-0000-0000-000000000001")){
-                    
+                    Task {
+                        let currentUser = try await supabase.auth.session.user
+
+                        var user: User =
+                        try await supabase
+                          .from("users")
+                          .select()
+                          .eq("id", value: currentUser.id)
+                          .single()
+                          .execute()
+                          .value
+                        if !user.unlocked_cars.contains(UUID(uuidString: "00000000-0000-0000-0000-000000000001")!){
+                            user.unlocked_cars.append(UUID(uuidString: "00000000-0000-0000-0000-000000000001")!)
+                        }
+                        try await supabase.from("users")
+                            .update(user)
+                            .eq("id", value: currentUser.id)
+                            .execute()
+                        car1 = 0.0
+                    }
                     print("Found 01")
                     dismiss()
                 }
                 if (result.string.contains("00000000-0000-0000-0000-000000000002")){
-                    
+                    Task {
+                        let currentUser = try await supabase.auth.session.user
+
+                        var user: User =
+                        try await supabase
+                          .from("users")
+                          .select()
+                          .eq("id", value: currentUser.id)
+                          .single()
+                          .execute()
+                          .value
+                        if !user.unlocked_cars.contains(UUID(uuidString: "00000000-0000-0000-0000-000000000002")!){
+                            user.unlocked_cars.append(UUID(uuidString: "00000000-0000-0000-0000-000000000002")!)
+                        }
+                        try await supabase.from("users")
+                            .update(user)
+                            .eq("id", value: currentUser.id)
+                            .execute()
+                        car2 = 0.0
+                    }
                     print("Found 02")
                     dismiss()
                 }
                 if (result.string.contains("00000000-0000-0000-0000-000000000003")){
-                    
+                    Task {
+                        let currentUser = try await supabase.auth.session.user
+
+                        var user: User =
+                        try await supabase
+                          .from("users")
+                          .select()
+                          .eq("id", value: currentUser.id)
+                          .single()
+                          .execute()
+                          .value
+                        if !user.unlocked_cars.contains(UUID(uuidString: "00000000-0000-0000-0000-000000000003")!){
+                            user.unlocked_cars.append(UUID(uuidString: "00000000-0000-0000-0000-000000000003")!)
+                        }
+                        try await supabase.from("users")
+                            .update(user)
+                            .eq("id", value: currentUser.id)
+                            .execute()
+                        car3 = 0.0
+                    }
                     print("Found 03")
+                    dismiss()
+                }
+                
+                if (result.string.contains("00000000-0000-0000-0000-000000000004")){
+                    Task {
+                        let currentUser = try await supabase.auth.session.user
+
+                        var user: User =
+                        try await supabase
+                          .from("users")
+                          .select()
+                          .eq("id", value: currentUser.id)
+                          .single()
+                          .execute()
+                          .value
+        //                if !user.unlocked_cars.contains(UUID(uuidString: "00000000-0000-0000-0000-000000000003")!){
+        //                    user.unlocked_cars.append(UUID(uuidString: "00000000-0000-0000-0000-000000000003")!)
+        //                }
+                        user.unlocked_cars = []
+                        try await supabase.from("users")
+                            .update(user)
+                            .eq("id", value: currentUser.id)
+                            .execute()
+                        car1 = 1.0
+                        car2 = 1.0
+                        car3 = 1.0
+                    }
+                    
+                    print("Found 04")
                     dismiss()
                 }
                 
@@ -47,6 +133,7 @@ struct SheetView: View {
                 print(error.localizedDescription)
             }
         }
+        /*
         Button("add 1"){
             Task {
                 let currentUser = try await supabase.auth.session.user
@@ -139,13 +226,15 @@ struct SheetView: View {
                 car3 = 1.0
             }
         }
+         */
         
         Button("Press to dismiss") {
             dismiss()
         }
         .font(.title)
         .padding()
-        .background(.black)
+        .background(.red)
+        .foregroundStyle(.white)
         .task {
             do{
                 let currentUser = try await supabase.auth.session.user
@@ -198,12 +287,16 @@ struct InventoryView: View {
                     .grayscale(car3)
                 HStack {
                     Spacer()
-                    Button("Add Card") {
+                    Button("Add Card")
+                    
+                    {
     //                    NavigationLink(destination: BattleView()) {
     //                        Text("Go to Battle")
 //                        }
                         showingSheet.toggle()
-                    }
+                    }.padding(30)
+                        .background(.blue)
+                        .foregroundStyle(.primary)
                     Spacer()
 
                 }

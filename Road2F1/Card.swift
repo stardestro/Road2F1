@@ -13,17 +13,17 @@ struct CardView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
             if(name.contains("blackcard")){
-                Image("lotusimagefinal0")
+                Image("lotus11")
                     .resizable()
                     .scaledToFit()
             }
             else if(name.contains("goldcard")){
-                Image("astonimage0")
+                Image("aston1231")
                     .resizable()
                     .scaledToFit()
             }
             else if(name.contains("yellowcard")){
-                Image("mclarenimage0")
+                Image("mclaren1231")
                     .resizable()
                     .scaledToFit()
             }

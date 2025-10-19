@@ -5,31 +5,13 @@
   },
   "resources" : [
     {
-      "filename" : "apriltag.arreferenceimage"
+      "filename" : "aston123.arreferenceimage"
     },
     {
-      "filename" : "astonimage.arreferenceimage"
+      "filename" : "lotus1.arreferenceimage"
     },
     {
-      "filename" : "blackcard.arreferenceimage"
-    },
-    {
-      "filename" : "goldcard.arreferenceimage"
-    },
-    {
-      "filename" : "goldv2.arreferenceimage"
-    },
-    {
-      "filename" : "lotusimagefinal.arreferenceimage"
-    },
-    {
-      "filename" : "mclarenimage.arreferenceimage"
-    },
-    {
-      "filename" : "tag.arreferenceimage"
-    },
-    {
-      "filename" : "tag0.arreferenceimage"
+      "filename" : "mclaren123.arreferenceimage"
     }
   ]
 }

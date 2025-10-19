@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "tag0.png",
+      "filename" : "lotus1.png",
       "idiom" : "universal"
     }
   ],
@@ -10,7 +10,7 @@
     "version" : 1
   },
   "properties" : {
-    "unit" : "centimeters",
-    "width" : 7
+    "unit" : "inches",
+    "width" : 5
   }
 }

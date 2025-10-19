@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "apriltag.png",
+      "filename" : "mclaren123.png",
       "idiom" : "universal"
     }
   ],
@@ -11,6 +11,6 @@
   },
   "properties" : {
     "unit" : "inches",
-    "width" : 3
+    "width" : 5
   }
 }

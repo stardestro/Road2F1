@@ -19,11 +19,11 @@ struct InventoryView: View {
     var body: some View {
         ScrollView{
             VStack(alignment: .leading, spacing: 15) {
-                CardView(name: "raichu")
+                CardView(name: "blackcard")
                     .padding(50)
-                CardView(name: "genesect")
+                CardView(name: "goldcard")
                     .padding(50)
-                CardView(name: "charizard")
+                CardView(name: "yellowcard")
                     .padding(50)
                 HStack {
                     Spacer()

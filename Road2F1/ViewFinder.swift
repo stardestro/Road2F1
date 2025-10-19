@@ -7,51 +7,11 @@
 
 import SwiftUI
 import RealityKit
-//import ARKit
-
-//struct ViewFinder: UIViewRepresentable {
-//    @State var modelName: String
-//    
-//    func makeUIView(context: Context) -> ARView {
-//        let arView = ARView(frame: .zero)
-//        
-//        let config = ARWorldTrackingConfiguration()
-////        config.planeDetection = [.horizontal,.vertical]
-////        config.environmentTexturing = .automatic
-//        arView.debugOptions = [.showAnchorOrigins]
-//        arView.session.run(config)
-//        return arView
-//    }
-//    
-//    
-//    func updateUIView(_ uiView: ARView, context: Context) {
-//        // 1.
-////        let anchorEntity = AnchorEntity(plane: .any)
-////            let testEntity = ARImageAnchor.load("apriltag", in: uiView.scene)
-//        let imageAnchor = AnchorEntity(.image(group: "AR Resources", name: "tag"))
-////        let imageAnchor = AnchorEntity(.image(named:"tag25h9-0.png"))
-//        
-//        // 2.
-////        guard let modelEntity = try? Entity.loadModel(named: modelName) else { return }
-//        
-//        guard let carEntity = try? Entity.loadModel(named: "toy_car") else { return }
-//        
-//        // 3.
-////        anchorEntity.addChild(modelEntity)
-//        imageAnchor.addChild(carEntity)
-//        
-//        // 4.
-////        uiView.scene.addAnchor(anchorEntity)
-//        uiView.scene.addAnchor(imageAnchor)
-//    }
-//}
-
-
-
-
 
 struct ViewFinder : View {
-    @State var rootNode: AnchorEntity = AnchorEntity()
+    @State var Car0: AnchorEntity = AnchorEntity()
+    @State var Car1: AnchorEntity = AnchorEntity()
+    @State var Car3: AnchorEntity = AnchorEntity()
     @State var modelName: String
     
     @State private var scale: Float = 1.0
@@ -62,25 +22,31 @@ struct ViewFinder : View {
                 content.camera = .spatialTracking
                 content.renderingEffects.depthOfField = .disabled
                 content.renderingEffects.motionBlur = .disabled
-                rootNode = AnchorEntity(.image(group: "AR Resources", name: "tag"))
-//                rootNode = AnchorEntity(.plane(.horizontal, classification: .any, minimumBounds:     [0.1, 0.1]))
-                if let glassCube = try? await ModelEntity(named: "toy_car") {
-                    content.add(glassCube)
-                    glassCube.position = [0.5,0.1,0]
-//                    glassCube.transform.scale = SIMD3<Float>(0.5, 0.5, 0.5)
-//                    glassCube.transform = Transform(scale: SIMD3<Float>(0.5, 0.5, 0.5))
-                    // 1.
-//                    glassCube.components.set(InputTargetComponent())
-                    // 2.
-//                    glassCube.generateCollisionShapes(recursive: false)
-                    rootNode.addChild(glassCube)
-//                    glassCube.scale = [1,1,1]
+                Car0 = AnchorEntity(.image(group: "AR Resources", name: "blackcard"))
+                Car1 = AnchorEntity(.image(group: "AR Resources", name: "goldv2"))
+                Car3 = AnchorEntity(.image(group: "AR Resources", name: "goldcard"))
+                if let car0 = try? await ModelEntity(named: "shrunk2uprotatedmore.usdz") {
+                    content.add(car0)
+                    Car0.addChild(car0)
                 }
-                content.add(rootNode)
+                content.add(Car0)
+                
+                if let car1 = try? await ModelEntity(named: "lotus_49c.usdz") {
+                    content.add(car1)
+                    Car1.addChild(car1)
+                }
+                content.add(Car1)
+                
+                if let car3 = try? await ModelEntity(named: "MCL35M.usdz") {
+                    content.add(car3)
+                    Car3.addChild(car3)
+                }
+                content.add(Car3)
+                
 
             } update: { content in
                 if let glassCube = content.entities.first {
-                    glassCube.transform.scale = [0.1, 0.1, 0.1]
+
                 }
             }
             placeholder: {

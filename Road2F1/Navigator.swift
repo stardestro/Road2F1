@@ -14,14 +14,14 @@ struct NavigatorView: View {
                 .tabItem {
                     Label("Inventory", systemImage: "cube.fill")
                 }
-            ProfileView()
-                .tabItem {
-                    Label("Profile", systemImage: "person.fill")
-                }
             ViewFinder(modelName: "toy_car")
                 .ignoresSafeArea(.all)
                 .tabItem {
                     Label("AR", systemImage: "camera.viewfinder")
+                }
+            ProfileView()
+                .tabItem {
+                    Label("Profile", systemImage: "person.fill")
                 }
             ContentView()
                 .tabItem {

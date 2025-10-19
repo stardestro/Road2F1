@@ -8,6 +8,8 @@
 import SwiftUI
 import Supabase
 import Foundation
+import CodeScanner
+internal import AVFoundation
 
 struct SheetView: View {
     @Binding var car1: Double
@@ -20,6 +22,31 @@ struct SheetView: View {
     @State var profile: User = .init(id: .init(uuidString: "00000000-0000-0000-0000-000000000000")!, email: "", username: "", display_name: "", unlocked_cars: [], fastest_lap: nil, total_races: 0, created_at: .now, updated_at: .now)
 
     var body: some View {
+        CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson") { response in
+            switch response {
+            case .success(let result):
+                
+                print("Found code: \(result.string)")
+                if (result.string.contains("00000000-0000-0000-0000-000000000001")){
+                    
+                    print("Found 01")
+                    dismiss()
+                }
+                if (result.string.contains("00000000-0000-0000-0000-000000000002")){
+                    
+                    print("Found 02")
+                    dismiss()
+                }
+                if (result.string.contains("00000000-0000-0000-0000-000000000003")){
+                    
+                    print("Found 03")
+                    dismiss()
+                }
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
         Button("add 1"){
             Task {
                 let currentUser = try await supabase.auth.session.user

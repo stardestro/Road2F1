@@ -14,6 +14,7 @@
 		978063622EA4976700EDA191 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 978063612EA4976700EDA191 /* Storage */; };
 		978063642EA4976700EDA191 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 978063632EA4976700EDA191 /* Supabase */; };
 		97E2A3FA2EA5001000BE72CC /* supa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2A3F92EA5000D00BE72CC /* supa.swift */; };
+		97E2A4052EA52F6900BE72CC /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 97E2A4042EA52F6900BE72CC /* CodeScanner */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 				978063642EA4976700EDA191 /* Supabase in Frameworks */,
 				9780635A2EA4976700EDA191 /* Auth in Frameworks */,
 				978063622EA4976700EDA191 /* Storage in Frameworks */,
+				97E2A4052EA52F6900BE72CC /* CodeScanner in Frameworks */,
 				978063602EA4976700EDA191 /* Realtime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,6 +104,7 @@
 				9780635F2EA4976700EDA191 /* Realtime */,
 				978063612EA4976700EDA191 /* Storage */,
 				978063632EA4976700EDA191 /* Supabase */,
+				97E2A4042EA52F6900BE72CC /* CodeScanner */,
 			);
 			productName = Road2F1;
 			productReference = 979436C02EA442D100BE3EF8 /* Road2F1.app */;
@@ -133,6 +136,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				978063582EA4976700EDA191 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+				97E2A4032EA52F6900BE72CC /* XCRemoteSwiftPackageReference "CodeScanner" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 979436C12EA442D100BE3EF8 /* Products */;
@@ -399,6 +403,14 @@
 				minimumVersion = 2.5.1;
 			};
 		};
+		97E2A4032EA52F6900BE72CC /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -431,6 +443,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 978063582EA4976700EDA191 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Supabase;
+		};
+		97E2A4042EA52F6900BE72CC /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 97E2A4032EA52F6900BE72CC /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
